@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestJs</title>
+    </style>
+</head>
+
+<body>
+    <!--Các biến-->
+    <h1>My First Web Page</h1>
+    <p>My First Paragraph</p>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML = 5 + 6;
+        let x, y, z;
+        x = 5;
+        y = 6;
+        z = x + y;
+        document.getElementById("demo").innerHTML = ("5+6 = " + z + "");
+    </script>
+    <!-- Function button onclick -->
+    <button type="button" onclick="myFunction()"> Click Me! </button>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        function myFunction() {
+            document.getElementById("demo1").innerHTML = ("Giang Ca");
+            document.getElementById("demo2").innerHTML = ("Thảo Ca");
+        }
+    </script>
+    <button type="button" onclick="MyFunction()"> Ấn vào đi! </button>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+        function MyFunction() {
+            document.getElementById("demo3").innerHTML = ("Giáng sinh vui vẻ");
+            document.getElementById("demo4").innerHTML = ("Ngạc nhiên chưa bà già");
+        }
+    </script>
+
+    <!-- mảng -->
+    <p id="demo8"></p>
+    <script>
+        const cars = ["giang", "thao", "tin"];
+        cars[0] = "giang ca"; // chèn vào phần tử đầu tiên trong mảng
+        cars.push("tin pro"); // chèn vào cuối
+        document.getElementById("demo8").innerHTML = cars; 
+    </script>
+    <!-- Hàm -->
+    <p id="demo9"></p>
+    <script>
+        function MyFunction1(p1, p2) {
+            return p1 * p2;
+        }
+        let result = MyFunction1(5, 4);
+        document.getElementById("demo9").innerHTML = result;
+    </script>
+    <!--Sự kiện JS-->
+    <p id="demo10"></p>
+    <button onclick="document.getElementById('demo10').innerHTML=Date()">Xem giờ?</button>;
+    <!-- Chuỗi JS-->
+    <p id="demo11"></p>
+    <script>
+        let carName1 = "xeDucaty";
+        let carName2 = "xeExciter";
+        document.getElementById("demo11").innerHTML = carName1 + " " + carName2;
+    </script>
+    <!-- Độ dài chuỗi-->
+    <p id="demo12"></p>
+    <script>
+        let text = "Apple, Banana, Kiwi";
+        let part = text.slice(0, 13);
+        document.getElementById("demo12").innerHTML = part;
+    </script>
+    <!--sắp xếp số-->
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <script>
+        const points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo13").innerHTML = points;
+
+        points.sort(function (a, b) { return a - b });
+        document.getElementById("demo14").innerHTML = points;
+    </script>
+    <!--sắp xếp theo bảng chữ cái-->
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo15").innerHTML = fruits;
+
+        fruits.sort(); // sắp xếp sort
+        document.getElementById("demo16").innerHTML = fruits;
+    </script>
+    <!--Ngày-->
+    <p id="demo17"></p>
+    <script>
+        const d = new Date("2022-03-25");
+        document.getElementById("demo17").innerHTML = d;
+    </script>
+    <!--Lấy tháng-->
+    <p id="demo18"></p>
+    <script>
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const e = new Date("2021-03-25");
+        let month = months[e.getMonth()];
+        document.getElementById("demo18").innerHTML = month;
+    </script>
+    <!-- câu lệnh if về ngày-->
+    <p id="demo19">Good Evening!</p>
+
+    <script>
+        if (new Date().getHours() < 16) {
+            document.getElementById("demo19").innerHTML = "Good day!";
+        }
+        else {
+            document.getElementById("demo19").innerHTML = "Good day bat!";
+        }
+    </script>
+    <!-- câu lệnh getDay-->
+    <p id="demo20"></p>
+
+    <script>
+        let day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+        }
+        document.getElementById("demo20").innerHTML = "Today is " + day;
+    </script>
+    <!--vòng lặp for-->
+    <p id="demo21"></p>
+
+    <script>
+        const cars1 = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+        let text1 = "";
+        for (let i = 0; i < cars1.length; i++) {
+            text1 += cars1[i] + "<br>";
+        }
+        document.getElementById("demo21").innerHTML = text1;
+    </script>
+</body>
+
+</html>

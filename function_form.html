@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> hehe </title>
+    <style type="text/css">
+        label {
+            float: left;
+            width: 100px;
+        }
+
+        input {
+            margin-bottom: 5px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        function getInfo() {
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var address = document.getElementById("address").value;
+            var phone = document.getElementById("phone").value;
+            // kiểm tra dữ liệu nhập vào form
+            if (fullname == "") {
+                document.getElementById("errorname").innerHTML = "Vui lòng nhập đầy đủ họ tên";
+            } else {
+                document.getElementById("errorname").innerHTML = "";
+            }
+            //ckeck mail
+            if (email == "") {
+                document.getElementById("erroremail").innerHTML = "Email không hợp lệ";
+            } else {
+                document.getElementById("erroremail").innerHTML = "";
+            }
+            //ckeck address
+            if (address == "") {
+                document.getElementById("erroraddress").innerHTML = "Địa chỉ không được rỗng";
+            } else {
+                document.getElementById("erroraddress").innerHTML = "";
+            }
+            //ckeck phone
+            if (phone == "") {
+                document.getElementById("errorphone").innerHTML = "Số điện thoại không hợp lệ";
+            } else {
+                document.getElementById("errorphone").innerHTML = "";
+            }
+            // ckeck show page
+            if (fullname && email && address && phone) {
+                info = "Tên bạn là  " + fullname + "<br/>";
+                info += "Email của bạn là  " + email + "<br/>";
+                info += "Địa chỉ của bạn là  " + address + "<br/>";
+                info += "Số điện thoại của bạn là  " + phone;
+                document.getElementById("kq").innerHTML = info;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label>Full Name</label>
+        <input type="text" name="fullname" id="fullname" value="" />
+        <span id="errorname" class="error"></span>
+        <br />
+        <label>Email</label>
+        <input type="text" name="email" id="email" value="" />
+        <span id="erroremail" class="error"></span>
+        <br />
+        <label>Address</label>
+        <input type="text" name="address" id="address" value="" />
+        <span id="erroraddress" class="error"></span>
+        <br />
+        <label>Phone</label>
+        <input type="text" name="phone" id="phone" value="" />
+        <span id="errorphone" class="error"></span>
+        <br />
+        <label> </label>
+        <button onclick="getInfo(); return false;">Show Information</button>
+    </form>
+    <div id="kq"></div>
+</body>
+
+</html>
